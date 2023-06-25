@@ -7,7 +7,7 @@ require_relative 'import'
 # Flush output immediately
 $stdout.sync = true
 
-puts 'Sunrow CSV importer for SOLECTRUS, ' \
+puts 'Sungrow CSV importer for SOLECTRUS, ' \
        "Version #{ENV.fetch('VERSION', '<unknown>')}, " \
        "built at #{ENV.fetch('BUILDTIME', '<unknown>')}"
 puts 'https://github.com/holiday-sunrise/solectrus-sungrow-importer.git'

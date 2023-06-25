@@ -1,5 +1,5 @@
 require_relative 'flux_writer'
-require_relative 'sungrow_record'
+require_relative 'solectrus_record'
 
 class Import
   def self.run(config:)
@@ -36,7 +36,7 @@ class Import
         .map do |row|
           count += 1
 
-          SungrowRecord.new(row).to_h
+          SolectrusRecord.new(row, measurement: config.influx_measurement).to_h
         end
 
     return unless count.positive?

@@ -8,7 +8,7 @@ describe Config do
       influx_port: '443',
       influx_token: 'this.is.just.an.example',
       influx_org: 'solectrus',
-      influx_bucket: 'SENEC',
+      influx_bucket: 'PV',
     }.freeze
   end
 
@@ -23,7 +23,7 @@ describe Config do
       it { expect(config.influx_port).to eq('443') }
       it { expect(config.influx_token).to eq('this.is.just.an.example') }
       it { expect(config.influx_org).to eq('solectrus') }
-      it { expect(config.influx_bucket).to eq('SENEC') }
+      it { expect(config.influx_bucket).to eq('PV') }
     end
 
     context 'with missing options' do
