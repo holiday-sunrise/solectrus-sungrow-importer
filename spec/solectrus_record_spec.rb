@@ -5,7 +5,7 @@ describe SolectrusRecord do
 
   let(:headers) do
     [
-      'Uhrzeit',
+      'Zeit',
       'Netzbezug [kW]',
       'Netzeinspeisung [kW]',
       'Stromverbrauch [kW]',

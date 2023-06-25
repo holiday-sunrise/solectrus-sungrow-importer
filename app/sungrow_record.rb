@@ -44,30 +44,20 @@ class SungrowRecord
   end
 
   def bat_power_plus
-    @bat_power_plus ||=
-      parse_kw(
-        row,
-        'Batterie(W)'
-        ,
-      )
+    @bat_power_plus ||= parse_kw(row, 'Batterie(W)')
   end
 
   def bat_power_minus
     # The CSV file format has changed over time, so two different column names are possible
-    @bat_power_minus ||=
-      parse_kw(
-        row,
-        'Batterie(W)'
-        ,
-      )
+    @bat_power_minus ||= parse_kw(row, 'Batterie(W)')
   end
 
   def bat_charge_current
-    @bat_charge_current ||= parse_a(row, 'Akku Stromstärke [A]')
+    @bat_charge_current ||= '0'.to_f
   end
 
   def bat_voltage
-    @bat_voltage ||= parse_v(row, 'Akku Spannung [V]')
+    @bat_voltage ||= '0'.to_f
   end
 
   def grid_power_plus
@@ -97,16 +87,6 @@ class SungrowRecord
   def parse_kw_negative(row, *columns)
     cell = cell(row, *columns)
     (cell.sub(',', '.').to_f / 1_000).round
-  end
-
-  # Ampere
-  def parse_a(row, *columns)
-    '0'.to_f
-  end
-
-  # Volt
-  def parse_v(row, *columns)
-    '0'.to_f
   end
 
   # Time

@@ -1,5 +1,5 @@
 require_relative 'flux_writer'
-require_relative 'solectrus_sungrow_record'
+require_relative 'sungrow_record'
 
 class Import
   def self.run(config:)
@@ -30,11 +30,9 @@ class Import
     print "Importing #{filename}... "
 
     count = 0
-    file = File.read(filename)
-    file = file.tr("\n", '')
     records =
       CSV
-        .parse(file, headers: true, col_sep: ',', row_sep: "\r")
+        .parse(File.read(filename), headers: true, col_sep: ',', row_sep: "\r")
         .map do |row|
           count += 1
 
