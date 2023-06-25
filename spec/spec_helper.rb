@@ -1,5 +1,5 @@
 require 'dotenv'
-Dotenv.load('.env.env.test')
+Dotenv.load('.env.test')
 
 require_relative '../app/import'
 require_relative '../app/config'

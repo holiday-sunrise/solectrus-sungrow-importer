@@ -32,7 +32,7 @@ class Import
     count = 0
     records =
       CSV
-        .parse(File.read(filename), headers: true, col_sep: ',', row_sep: "\r")
+        .parse(File.read(filename), headers: true, col_sep: ',')
         .map do |row|
           count += 1
 
