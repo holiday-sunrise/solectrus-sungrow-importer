@@ -1,4 +1,4 @@
-describe SolectrusRecord do
+describe SungrowRecord do
   subject(:record) { described_class.new(row) }
 
   let(:row) { CSV::Row.new headers, fields }
@@ -6,14 +6,10 @@ describe SolectrusRecord do
   let(:headers) do
     [
       'Zeit',
-      'Netzbezug [kW]',
-      'Netzeinspeisung [kW]',
-      'Stromverbrauch [kW]',
-      'Akku-Beladung [kW]',
-      'Akku-Entnahme [kW]',
-      'Stromerzeugung [kW]',
-      'Akku Spannung [V]',
-      'Akku Stromstärke [A]',
+      'PV-Ertrag(W)',
+      'Netz(W)',
+      'Batterie(W)',
+      'Gesamtverbrauch(W)',
     ]
   end
 
