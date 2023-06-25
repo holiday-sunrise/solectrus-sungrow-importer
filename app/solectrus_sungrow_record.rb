@@ -40,7 +40,7 @@ class SungrowRecord
 
   def house_power
     @house_power ||=
-      parse_kw(row, 'Gesamtverbrauch(W)'   )
+      parse_kw(row, 'Gesamtverbrauch(W)')
   end
 
   def bat_power_plus
@@ -48,6 +48,7 @@ class SungrowRecord
       parse_kw(
         row,
         'Batterie(W)'
+        ,
       )
   end
 
@@ -57,6 +58,7 @@ class SungrowRecord
       parse_kw(
         row,
         'Batterie(W)'
+        ,
       )
   end
 
