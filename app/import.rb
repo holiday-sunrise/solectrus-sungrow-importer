@@ -10,8 +10,8 @@ class Import
     count = 0
     Dir
       .glob("#{config.import_folder}/**/*.csv")
-      .each do |filename|
-        import.process(filename)
+      .each do |file_path|
+        import.process(file_path)
         count += 1
       end
 
@@ -26,8 +26,8 @@ class Import
 
   attr_reader :config
 
-  def process(filename)
-    print "Importing #{filename}... "
+  def process(file_path)
+    print "Importing #{file_path}... "
 
     count = 0
     records =
