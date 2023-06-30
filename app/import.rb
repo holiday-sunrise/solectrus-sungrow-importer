@@ -32,7 +32,7 @@ class Import
     count = 0
     records =
       CSV
-        .parse(File.read(filename), headers: true, col_sep: ',')
+        .parse(file_content(file_path), headers: true, col_sep: ',')
         .map do |row|
           count += 1
 
@@ -47,5 +47,9 @@ class Import
 
     puts "Pausing for #{config.import_pause} seconds..."
     sleep(config.import_pause)
+  end
+
+  def file_content(file_path)
+    File.read(file_path, encoding: 'bom|utf-8')
   end
 end
